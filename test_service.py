@@ -20,7 +20,6 @@ def test_add_key1():
 def test_get_key1():
     """ Test1 get key / value pair """
     req = requests.get(BASE_URL+'/foo', headers=HEADERS)
-    print req.json()
     assert req.json()['foo'] == 'bar'
 
 
@@ -39,13 +38,11 @@ def test_update_key2():
 def test_get_allkeys():
     """ Test get ALL key / value pairs """
     req = requests.get(BASE_URL, headers=HEADERS)
-    print req.json()
 
 
 def test_delete_key1():
     """ Test1 delete key / value pair """
     req = requests.delete(BASE_URL+'/foo', headers=HEADERS)
-    print req.json()
     assert req.json()['result'] is True
 
 
