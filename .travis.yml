@@ -1,0 +1,26 @@
+sudo: false
+
+language: python
+
+python:
+  - 2.7
+
+install:
+  - pip install pylint pep8 requests
+  - pip install -r requirements.txt
+
+script:
+
+  # Static code tests
+  - pylint *.py
+  - pep8 *.py
+
+  # Start servive
+  - python service.py &
+  - sleep 3
+
+  # Run functional tests
+  - pytest .
+
+  # Stop service
+  - killall python
