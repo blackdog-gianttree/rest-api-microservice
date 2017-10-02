@@ -37,7 +37,7 @@ def test_update_key2():
 
 def test_get_allkeys():
     """ Test get ALL key / value pairs """
-    req = requests.get(BASE_URL, headers=HEADERS)
+    requests.get(BASE_URL, headers=HEADERS)
 
 
 def test_delete_key1():
