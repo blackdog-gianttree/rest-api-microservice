@@ -6,11 +6,13 @@ Email: michaelthomasweiss@gmail.com
 
 from flask import Flask, abort, jsonify, request
 
+API_VER = 'v1.0'
+
 API = Flask(__name__)
 DB = {}
 
 
-@API.route('/api/v1.0/key', methods=['POST'])
+@API.route('/api/'+API_VER+'/key', methods=['POST'])
 def add_key():
     """ Add key / value pair """
     try:
@@ -21,7 +23,7 @@ def add_key():
     return jsonify({key: DB[key]}), 201
 
 
-@API.route('/api/v1.0/key/<string:key>', methods=['GET'])
+@API.route('/api/'+API_VER+'/key/<string:key>', methods=['GET'])
 def get_key(key):
     """ Get key / value pair """
     try:
@@ -31,7 +33,7 @@ def get_key(key):
     return jsonify({key: DB[key]}), 200
 
 
-@API.route('/api/v1.0/key/<string:key>', methods=['PUT'])
+@API.route('/api/'+API_VER+'/key/<string:key>', methods=['PUT'])
 def update_key(key):
     """ Update key / value pair """
     try:
@@ -42,7 +44,7 @@ def update_key(key):
     return jsonify({key: DB[key]}), 201
 
 
-@API.route('/api/v1.0/key/<string:key>', methods=['DELETE'])
+@API.route('/api/'+API_VER+'/key/<string:key>', methods=['DELETE'])
 def delete_key(key):
     """ Delete key / value pair """
     try:
@@ -52,7 +54,7 @@ def delete_key(key):
     return jsonify({'result': True}), 202
 
 
-@API.route('/api/v1.0/key', methods=['GET'])
+@API.route('/api/'+API_VER+'/key', methods=['GET'])
 def get_all_keys():
     """ Get all key / value pairs """
     try:
