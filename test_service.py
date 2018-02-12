@@ -1,7 +1,7 @@
 """
 Test REST API Microservice Example
 Name: Mike Weiss
-Email: michaelthomasweiss@gmail.com
+Email: blackdog.gianttree@gmail.com
 """
 
 import json
