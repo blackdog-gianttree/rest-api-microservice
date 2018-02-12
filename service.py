@@ -1,7 +1,7 @@
 """
 REST API Microservice Example
 Name: Mike Weiss
-Email: michaelthomasweiss@gmail.com
+Email: blackdog.gianttree@gmail.com
 """
 
 from flask import Flask, abort, jsonify, request
